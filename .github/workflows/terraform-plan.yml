@@ -38,9 +38,3 @@ jobs:
         run: terraform plan -out "tf_plan" -input=false
         working-directory: 'terraform/'
         
-      - name: Upload TF Plan
-        uses: actions/upload-artifact@v2
-        with:
-          name: tf_plan
-          path: ./plan/tf_plan
-          retention-days: 1
