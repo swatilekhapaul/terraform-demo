@@ -25,15 +25,9 @@ jobs:
       - name: Terraform Init
         run: terraform init
         working-directory: 'terraform/'
-      
-      - name: Download TF Plan
-        uses: actions/download-artifact@v2
-        with:
-          name: tf_plan
-          path: ./plan  
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve "tf_plan"
+        run: terraform apply -auto-approve
         working-directory: 'terraform/'
         
           
